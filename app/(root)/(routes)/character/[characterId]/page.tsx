@@ -8,7 +8,7 @@ import { CharacterForm } from "./components/character-form";
 
 interface CharacterIdPageProps {
     params: {
-        companionId: string;
+        characterId: string;
     };
 };
 
@@ -29,7 +29,7 @@ const CharacterIdPage = async ({
 
     const character = await prismadb.character.findUnique({
         where: {
-            id: params.companionId,
+            id: params.characterId,
             userId,
         }
     });
