@@ -94,9 +94,11 @@ export const CharacterForm = ({
         try {
             if (initialData) {
                 //Called if the user already created a character
+                //This will pass the values of the form and edit the character in the database
                 await axios.patch(`/api/character/${initialData.id}`, values);
             } else {
                 //Called if the user has not created a character
+                //This will pass the values of the form and create the character in the database
                 await axios.post("/api/character", values);
             }
 
