@@ -35,6 +35,7 @@ export async function PATCH(req: Request, { params }: { params: { characterId: s
         const character = await prismadb.character.update({
             where: {
                 id: params.characterId,
+                userId: user.id
             },
             data: {
                 categoryId,
@@ -51,6 +52,28 @@ export async function PATCH(req: Request, { params }: { params: { characterId: s
         return NextResponse.json(character);
     } catch (error) {
         console.log("[CHARACTER_POST]", error);
+        return new NextResponse("Internal Error", { status: 500 });
+    }
+};
+
+export async function DELETE(request: Request, { params }: { params: { characterId: string } }) {
+    try {
+        const { userId } = auth();
+
+        if (!userId) {
+            return new NextResponse("Unauthorized", { status: 401 });
+        }
+
+        const character = await prismadb.character.delete({
+            where: {
+                userId,
+                id: params.characterId
+            }
+        });
+
+        return NextResponse.json(character);
+    } catch (error) {
+        console.log("[CHARACTER_DELETE]", error);
         return new NextResponse("Internal Error", { status: 500 });
     }
 };
