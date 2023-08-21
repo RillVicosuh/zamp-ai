@@ -154,7 +154,7 @@ export const CharacterForm = ({
                                         <Input disabled={isLoading} placeholder="Elon Musk" {...field} />
                                     </FormControl>
                                     <FormDescription>
-                                        This is how your A.I. Character will be named.
+                                        Create a name for your A.I. Character.
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
@@ -165,7 +165,7 @@ export const CharacterForm = ({
                             control={form.control}
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Description</FormLabel>
+                                    <FormLabel>Quick Description</FormLabel>
                                     <FormControl>
                                         <Input disabled={isLoading} placeholder="CEO & Founder of Tesla, SpaceX" {...field} />
                                     </FormControl>
@@ -195,7 +195,7 @@ export const CharacterForm = ({
                                         </SelectContent>
                                     </Select>
                                     <FormDescription>
-                                        Select an appropriate category for your A.I.
+                                        Select a category for your A.I. Character
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
@@ -206,7 +206,7 @@ export const CharacterForm = ({
                         <div>
                             <h3 className="text-lg font-medium">Configuration</h3>
                             <p className="text-sm text-muted-foreground">
-                                Detailed instructions for A.I. Behaviour
+                                Detailed instructions for customizing your A.I. Character
                             </p>
                         </div>
                         <Separator className="bg-primary/10" />
@@ -216,9 +216,9 @@ export const CharacterForm = ({
                         control={form.control}
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Instructions</FormLabel>
+                                <FormLabel>Background & Behaviour</FormLabel>
                                 <FormControl>
-                                    <Textarea disabled={isLoading} rows={7} className="bg-background resize-none" placeholder={PREAMBLE} {...field} />
+                                    <Textarea disabled={isLoading} rows={7} className="bg-background resize-none focus-visible:ring-crimson2" placeholder={PREAMBLE} {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     Describe in detail your character&apos;s backstory and relevant details.
@@ -232,12 +232,12 @@ export const CharacterForm = ({
                         control={form.control}
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Example Conversation</FormLabel>
+                                <FormLabel>Simple Example Conversation</FormLabel>
                                 <FormControl>
-                                    <Textarea disabled={isLoading} rows={7} className="bg-background resize-none" placeholder={SEED_CHAT} {...field} />
+                                    <Textarea disabled={isLoading} rows={7} className="bg-background resize-none focus-visible:ring-crimson2" placeholder={SEED_CHAT} {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                    Write an example of a human chatting with your A.I. character, including expected answers from the A.I. character.
+                                    What would your Character say? Write an example of a human chatting with your A.I. Character, including expected answers from the A.I. Character.
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -245,7 +245,7 @@ export const CharacterForm = ({
                     />
                     <div className="w-full flex justify-center">
                         <Button size="lg" disabled={isLoading}>
-                            {initialData ? "Edit your character" : "Create your character"}
+                            {initialData ? "Edit Your Character" : "Create Your Character"}
                             <Wand2 className="w-4 h-4 ml-2" />
                         </Button>
                     </div>

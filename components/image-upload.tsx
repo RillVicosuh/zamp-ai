@@ -42,7 +42,7 @@ export const ImageUpload = ({
                         p-4 
                         border-4 
                         border-dashed
-                        border-primary/10 
+                        border-crimson1/90 
                         rounded-lg 
                         hover:opacity-75 
                         transition 
