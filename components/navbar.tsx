@@ -7,6 +7,7 @@ import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 import { MobileSidebar } from "./mobile-sidebar";
+import Image from "next/image";
 
 const font = Poppins({
     weight: "600",
@@ -20,9 +21,15 @@ export const Navbar = () => {
             <div className="flex items-center">
                 <MobileSidebar />
                 <Link href="/">
-                    <h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-primary", font.className)}>
+                    {/*<h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-primary", font.className)}>
                         Zamp Ai
-                    </h1>
+                    </h1>*/}
+                    {/*<h1 className="hidden md:block">
+                        <Image src="/logo.png" alt="Zamp Ai" width={300} height={70} />
+                    </h1>*/}
+                    <div className="hidden md:block cursor-pointer" role="link" tabIndex={0}>
+                        <Image src="/logo.png" alt="ZampAi" width={250} height={50} className="align-middle" />
+                    </div>
                 </Link>
             </div>
             <div className="flex items-center gap-x-3">
