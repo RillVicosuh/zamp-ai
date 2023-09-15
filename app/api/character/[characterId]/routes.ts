@@ -25,6 +25,8 @@ export async function PATCH(req: Request, { params }: { params: { characterId: s
             return new NextResponse("Missing required fields", { status: 400 });
         };
 
+        console.log('Hello there');
+
         /*const isPro = await checkSubscription();
     
         if (!isPro) {
