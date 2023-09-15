@@ -95,7 +95,9 @@ export const CharacterForm = ({
             if (initialData) {
                 //Called if the user already created a character
                 //This will pass the values of the form and edit the character in the database
+                console.log('Hello There 2');
                 await axios.patch(`/api/character/${initialData.id}`, values);
+                console.log('Hello There 3')
             } else {
                 //Called if the user has not created a character
                 //This will pass the values of the form and create the character in the database
