@@ -11,6 +11,8 @@ export async function PATCH(req: Request, { params }: { params: { characterId: s
         //retrieve theses elements of the AI character
         const { src, name, description, instructions, seed, categoryId } = body;
 
+        console.log('Hello there');
+
         if (!params.characterId) {
             return new NextResponse("Character ID is required", { status: 400 })
         }
@@ -24,8 +26,6 @@ export async function PATCH(req: Request, { params }: { params: { characterId: s
         if (!src || !name || !description || !instructions || !seed || !categoryId) {
             return new NextResponse("Missing required fields", { status: 400 });
         };
-
-        console.log('Hello there');
 
         /*const isPro = await checkSubscription();
     
