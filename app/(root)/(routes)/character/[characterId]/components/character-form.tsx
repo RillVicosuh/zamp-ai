@@ -91,6 +91,7 @@ export const CharacterForm = ({
     const isLoading = form.formState.isSubmitting;
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        console.log('Hello There 4');
         try {
             if (initialData) {
                 //Called if the user already created a character
@@ -112,6 +113,7 @@ export const CharacterForm = ({
             router.refresh();
             router.push("/");
         } catch (error) {
+            console.log("Hello There 5")
             toast({
                 variant: "destructive",
                 description: "Something went wrong.",
