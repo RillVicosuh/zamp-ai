@@ -53,6 +53,7 @@ export async function PATCH(req: Request, { params }: { params: { characterId: s
 
         return NextResponse.json(character);
     } catch (error) {
+        console.log('Hello There 6')
         console.log("[CHARACTER_POST]", error);
         return new NextResponse("Internal Error", { status: 500 });
     }

@@ -113,7 +113,7 @@ export const CharacterForm = ({
             router.refresh();
             router.push("/");
         } catch (error) {
-            console.log("Hello There 5")
+            console.error("Error during PATCH request:", error);
             toast({
                 variant: "destructive",
                 description: "Something went wrong.",
