@@ -4,8 +4,11 @@ import { NextResponse } from "next/server";
 import prismadb from "@/lib/prismadb";
 //import { checkSubscription } from "@/lib/subscription";
 
+console.log('Hello there 8');
+
 export async function PATCH(req: Request, { params }: { params: { characterId: string } }) {
     try {
+        console.log('Hello there 7');
         const body = await req.json();
         const user = await currentUser();
         //retrieve theses elements of the AI character
