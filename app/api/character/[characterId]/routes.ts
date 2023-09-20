@@ -6,7 +6,7 @@ import prismadb from "@/lib/prismadb";
 
 console.log('Hello there 8');
 
-export async function PUT(req: Request, { params }: { params: { characterId: string } }) {
+export async function PATCH(req: Request, { params }: { params: { characterId: string } }) {
     try {
         console.log('Hello there 7');
         const body = await req.json();

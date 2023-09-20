@@ -99,7 +99,7 @@ export const CharacterForm = ({
                 console.log('Hello There 2');
                 console.log(initialData.id);
                 console.log(values);
-                await axios.put(`/api/character/${initialData.id}`, values);
+                await axios.patch(`/api/character/${initialData.id}`, values);
                 console.log('Hello There 3')
             } else {
                 //Called if the user has not created a character
