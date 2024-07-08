@@ -1,7 +1,9 @@
 # Personalized AI Companion Project
 
 ### Website: https://www.zampai.com/ 
-![image](https://github.com/RillVicosuh/zamp-ai/assets/65578557/980c1676-9e03-4aef-8dec-2fed85570f1c)
+![zampai1](https://github.com/RillVicosuh/zamp-ai/assets/65578557/52c18b0b-7a14-4883-a7a1-184da3bd1508)
+![zampai2](https://github.com/RillVicosuh/zamp-ai/assets/65578557/ef25f615-42d1-401d-99ec-e521933cee81)
+![zampai3](https://github.com/RillVicosuh/zamp-ai/assets/65578557/e8072960-7680-4986-91f1-e2dfdbacbad4)
 
 
 ## Overview
