@@ -17,9 +17,9 @@ const CharacterIdPage = async ({
 }: CharacterIdPageProps) => {
     const { userId } = auth();
 
-    /*if (!userId) {
+    if (!userId) {
         return redirectToSignIn();
-    }*/
+    }
 
     /*const validSubscription = await checkSubscription();
   
