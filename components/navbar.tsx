@@ -1,5 +1,6 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
+import { useRouter } from 'next/router';
 import { Menu, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
@@ -18,8 +19,9 @@ const font = Poppins({
 
 export const Navbar = () => {
     const { isSignedIn } = useUser();
+    const router = useRouter();
     const handleSignInClick = () => {
-        redirectToSignIn(); // Explicitly calling the function
+        router.push('/sign-in');
     };
     return (
         <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16">
