@@ -1,6 +1,5 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
-import { useRouter } from 'next/router';
 import { Menu, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
@@ -19,10 +18,6 @@ const font = Poppins({
 
 export const Navbar = () => {
     const { isSignedIn } = useUser();
-    const router = useRouter();
-    const handleSignInClick = () => {
-        router.push('/sign-in');
-    };
     return (
         <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16">
             <div className="flex items-center">
@@ -48,9 +43,11 @@ export const Navbar = () => {
                 {isSignedIn ? (
                     <UserButton afterSignOutUrl="/" /> // Display UserButton if the user is signed in
                 ) : (
-                    <Button variant="premium2" size="sm" onClick={handleSignInClick}>
-                        Sign In
-                    </Button> // Display Sign In button if the user is not signed in
+                    <Link href="/sign-in" passHref>
+                        <Button as="a" variant="premium2" size="sm">
+                            Sign In
+                        </Button>
+                    </Link> // Display Sign In button if the user is not signed in
                 )}
             </div>
         </div>
