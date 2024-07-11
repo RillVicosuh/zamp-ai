@@ -1,9 +1,10 @@
 "use client";
+import { useUser } from "@clerk/nextjs";
 import { Menu, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, redirectToSignIn } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 import { MobileSidebar } from "./mobile-sidebar";
@@ -16,6 +17,7 @@ const font = Poppins({
 });
 
 export const Navbar = () => {
+    const { isSignedIn } = useUser();
     return (
         <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16">
             <div className="flex items-center">
@@ -38,7 +40,14 @@ export const Navbar = () => {
                     <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
                 </Button>
                 <ModeToggle />
-                <UserButton afterSignOutUrl="/" />
+                {isSignedIn ? (
+                    <UserButton afterSignOutUrl="/" /> // Display UserButton if the user is signed in
+                ) : (
+                    <Button variant="premium2" size="sm" onClick={() => redirectToSignIn()}>
+                        Sign In
+                        <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
+                    </Button> // Display Sign In button if the user is not signed in
+                )}
             </div>
         </div>
     );
