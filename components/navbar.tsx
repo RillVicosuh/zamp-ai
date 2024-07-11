@@ -18,6 +18,9 @@ const font = Poppins({
 
 export const Navbar = () => {
     const { isSignedIn } = useUser();
+    const handleSignInClick = () => {
+        redirectToSignIn(); // Explicitly calling the function
+    };
     return (
         <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16">
             <div className="flex items-center">
@@ -43,9 +46,8 @@ export const Navbar = () => {
                 {isSignedIn ? (
                     <UserButton afterSignOutUrl="/" /> // Display UserButton if the user is signed in
                 ) : (
-                    <Button variant="premium2" size="sm" onClick={() => redirectToSignIn()}>
+                    <Button variant="premium2" size="sm" onClick={handleSignInClick}>
                         Sign In
-                        <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
                     </Button> // Display Sign In button if the user is not signed in
                 )}
             </div>
