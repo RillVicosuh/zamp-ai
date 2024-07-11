@@ -44,9 +44,11 @@ export const Navbar = () => {
                     <UserButton afterSignOutUrl="/" /> // Display UserButton if the user is signed in
                 ) : (
                     <Link href="/sign-in" passHref>
-                        <Button as="a" variant="premium2" size="sm">
-                            Sign In
-                        </Button>
+                        <a>
+                            <Button variant="premium2" size="sm">
+                                Sign In
+                            </Button>
+                        </a>
                     </Link> // Display Sign In button if the user is not signed in
                 )}
             </div>
